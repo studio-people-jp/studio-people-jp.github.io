@@ -108,7 +108,7 @@
         if (page.type !== (isEnglish ? "CATALOG" : "カタログ") || !doc.querySelector(".stationery-card")) {
           results.push({
             id: "page:" + url, kind: "page", title: page.title || title, subtitle: description || title,
-            type: page.type || "PAGE", url, searchable: [page.title, title, description, doc.title, tags].join(" ")
+            type: page.type || "PAGE", url, searchable: withSearchAliases([page.title, title, description, doc.title, tags].join(" "))
           });
         }
         doc.querySelectorAll(".stationery-card").forEach((card, i) => {
