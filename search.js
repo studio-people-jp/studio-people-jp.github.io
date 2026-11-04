@@ -23,7 +23,11 @@
     { path: root + "about.html", type: isEnglish ? "PAGE" : "ページ", title: isEnglish ? "About" : "このサイトについて" },
     { path: root + "1.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
     { path: root + "2.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "3.html", type: isEnglish ? "ARTICLE" : "記事", title: "" }
+    { path: root + "3.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
+    { path: root + "4.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
+    { path: root + "5.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
+    { path: root + "6.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
+    { path: root + "7.html", type: isEnglish ? "ARTICLE" : "記事", title: "" }
   ];
 
   // Kana-aware search: unify hiragana/katakana and add a romaji-to-kana variant.
@@ -100,10 +104,11 @@
           || (doc.querySelector("title") && doc.querySelector("title").textContent.trim())
           || page.title;
         const description = (doc.querySelector(".hero .description") && doc.querySelector(".hero .description").textContent.trim()) || "";
+        const tags = (doc.querySelector('meta[name="search-tags"]')?.content || "").trim();
         if (page.type !== (isEnglish ? "CATALOG" : "カタログ") || !doc.querySelector(".stationery-card")) {
           results.push({
             id: "page:" + url, kind: "page", title: page.title || title, subtitle: description || title,
-            type: page.type || "PAGE", url, searchable: [page.title, title, description, doc.title].join(" ")
+            type: page.type || "PAGE", url, searchable: [page.title, title, description, doc.title, tags].join(" ")
           });
         }
         doc.querySelectorAll(".stationery-card").forEach((card, i) => {
