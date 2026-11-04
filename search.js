@@ -107,7 +107,7 @@
         const tags = (doc.querySelector('meta[name="search-tags"]')?.content || "").trim();
         if (page.type !== (isEnglish ? "CATALOG" : "カタログ") || !doc.querySelector(".stationery-card")) {
           results.push({
-            id: "page:" + url, kind: "page", title: page.title || title, subtitle: description || title,
+            id: "page:" + url, kind: page.type === (isEnglish ? "ARTICLE" : "記事") ? "article" : "page", title: page.title || title, subtitle: description || title,
             type: page.type || "PAGE", url, searchable: withSearchAliases([page.title, title, description, doc.title, tags].join(" "))
           });
         }
@@ -281,7 +281,8 @@
         const aExact = aTitle === query ? 0 : aTitle.startsWith(query) ? 1 : 2;
         const bExact = bTitle === query ? 0 : bTitle.startsWith(query) ? 1 : 2;
         if (aExact !== bExact) return aExact - bExact;
-        if (a.kind !== b.kind) return a.kind === "product" ? -1 : 1;
+        const kindRank = { article: 0, product: 1, page: 2 };
+        if (a.kind !== b.kind) return (kindRank[a.kind] ?? 3) - (kindRank[b.kind] ?? 3);
         return a.title.localeCompare(b.title);
       });
       renderResults(matches, query);
