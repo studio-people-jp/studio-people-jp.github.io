@@ -1,7 +1,14 @@
 (function () {
   "use strict";
 
-  // Keep every Japanese and English privacy-policy link pointed at Stardio.\n  document.querySelectorAll('a[href]').forEach(function (link) {\n    const href = link.getAttribute("href");\n    if (href === "privacy.html" || href === "./privacy.html" || href === "../privacy.html") {\n      link.href = "https://stardio-corp.github.io/privacy.html";\n    }\n  });
+  // Keep every Japanese and English privacy-policy link pointed at Stardio.
+  document.querySelectorAll('a[href]').forEach(function (link) {
+    const href = link.getAttribute("href");
+    if (href === "privacy.html" || href === "./privacy.html" || href === "../privacy.html") {
+      link.href = "https://stardio-corp.github.io/privacy.html";
+    }
+  });
+
   const STORAGE_KEY = "studioPeople.settings.v1";
   const DEFAULTS = { theme: "standard", motion: true, language: "ja" };
   const THEMES = ["standard", "midnight", "dark", "sky", "mono-black", "mono-white", "greige", "play-button-minimal", "galaxy", "editorial"];
