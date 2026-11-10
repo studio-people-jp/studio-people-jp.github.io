@@ -27,7 +27,11 @@
     { path: root + "4.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
     { path: root + "5.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
     { path: root + "6.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "7.html", type: isEnglish ? "ARTICLE" : "記事", title: "" }
+    { path: root + "7.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
+    { path: root + "8.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
+    { path: root + "9.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
+    { path: root + "10.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
+    { path: root + "11.html", type: isEnglish ? "ARTICLE" : "記事", title: "" }
   ];
 
   // Kana-aware search: unify hiragana/katakana and add a romaji-to-kana variant.
