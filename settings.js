@@ -58,7 +58,7 @@
     if (!document.getElementById("spGlobalSearchScript")) {
       const searchScript = document.createElement("script");
       searchScript.id = "spGlobalSearchScript";
-      searchScript.src = new URL("search.js?v=4", SETTINGS_SCRIPT_URL).href;
+      searchScript.src = new URL("search.js?v=5", SETTINGS_SCRIPT_URL).href;
       document.body.appendChild(searchScript);
     }
 
