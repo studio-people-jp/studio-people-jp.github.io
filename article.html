@@ -120,94 +120,7 @@ document.addEventListener(
     function () {
 
 
-        const menuButton =
-            document.getElementById("menuButton");
-
-        const menuPanel =
-            document.getElementById("menuPanel");
-
-        const menuBackdrop =
-            document.getElementById("menuBackdrop");
-
-
-        requestAnimationFrame(
-            function () {
-
-                document.body.classList.add(
-                    "page-loaded"
-                );
-
-            }
-        );
-
-
-        function closeMenu() {
-
-            menuButton.classList.remove("active");
-
-            menuPanel.classList.remove("active");
-
-            menuBackdrop.classList.remove("active");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
-
-
-        menuButton.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    menuPanel.classList.toggle("active");
-
-
-                menuButton.classList.toggle(
-                    "active",
-                    isOpen
-                );
-
-
-                menuBackdrop.classList.toggle(
-                    "active",
-                    isOpen
-                );
-
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-
-            }
-        );
-
-
-        menuBackdrop.addEventListener(
-            "click",
-            function () {
-
-                closeMenu();
-
-            }
-        );
-
-
-        document.addEventListener(
-            "keydown",
-            function (e) {
-
-                if (e.key === "Escape") {
-
-                    closeMenu();
-
-                }
-
-            }
-        );
+        
 
 
         /* ページ遷移は共通の page-transition.js に一本化 */
@@ -266,6 +179,7 @@ document.addEventListener(
 
     <script src="articles.js"></script>
 <script src="motion.js?v=1"></script>
+    <script src="menu.js?v=1"></script>
     <script src="settings.js?v=global-search-2"></script>
 
 <script src="page-transition.js?v=1"></script>
