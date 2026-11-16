@@ -46,7 +46,6 @@
       return pages;
     }
   }
-  ];
 
   // Kana-aware search: unify hiragana/katakana and add a romaji-to-kana variant.
   const normalize = value => String(value || "").normalize("NFKC").toLocaleLowerCase()
