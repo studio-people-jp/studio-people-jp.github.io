@@ -32,12 +32,12 @@
       if (!response.ok) throw new Error("記事ファイル一覧を取得できませんでした");
       const files = await response.json();
       const articlePages = files
-        .filter(file => file.type === "file" && /^\\d+\\.html$/i.test(file.name))
+        .filter(file => file.type === "file" && /^\d+\.html$/i.test(file.name))
         .map(file => ({
           path: root + file.name,
           type: isEnglish ? "ARTICLE" : "記事",
           title: "",
-          number: Number(file.name.match(/^(\\d+)\\.html$/i)[1])
+          number: Number(file.name.match(/^(\d+)\.html$/i)[1])
         }))
         .sort((a, b) => b.number - a.number);
       return [...pages, ...articlePages];
