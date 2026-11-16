@@ -1753,29 +1753,7 @@
 
 
 <script>
-/* ========================================
-   商品詳細パネル
-======================================== */
 document.addEventListener("DOMContentLoaded", function () {
-    const panel = document.getElementById("productDetailPanel");
-    const backdrop = document.getElementById("productDetailBackdrop");
-    const closeButton = document.getElementById("productDetailClose");
-    const backButton = document.getElementById("productDetailBack");
-
-    if (!panel || !backdrop || !closeButton || !backButton) return;
-
-    const nameField = document.getElementById("productDetailName");
-    const makerField = document.getElementById("productDetailMaker");
-    const makerValue = document.getElementById("productDetailMakerValue");
-    const seriesField = document.getElementById("productDetailSeries");
-    const seriesValue = document.getElementById("productDetailSeriesValue");
-    const categoryField = document.getElementById("productDetailCategory");
-    const weightField = document.getElementById("productDetailWeight");
-    const weightSourceLink = document.getElementById("productDetailWeightSource");
-    const weightSourceNote = document.getElementById("productDetailWeightSourceNote");
-    const priceField = document.getElementById("productDetailPrice");
-    const priceSourceLink = document.getElementById("productDetailPriceSource");
-    const priceSourceNote = document.getElementById("productDetailPriceSourceNote");
     const verifiedPrices = {
         "PELIKAN|M300": { value: "39,600円（税込）", url: "https://www.mistore.jp/shopping/brand/list?brand=004427&cgid=28_060000", note: "ユーザー提供情報（税込）" },
         "PELIKAN|M400": { value: "63,800円（税込）", url: "https://www.mistore.jp/shopping/brand/list?brand=004427&cgid=28_060000", note: "三越伊勢丹オンラインストア掲載価格（税込。カラー・仕様により異なる場合あり）" },
@@ -1827,7 +1805,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "SAILOR|King Cobra": { value: "未確認", url: "https://sailor.co.jp/category_product/series/?taxonomy-detail=special-nib", note: "現行公式ページで個別価格を確認できず" },
     };
 
-    // 重量はメーカー公式ページで確認できた製品のみ登録。シリーズ名が同じでも別製品へ推定適用しない。
     const verifiedWeights = {
         "PELIKAN|M300": { value: "11 g", url: "https://www.pelikan.com/ae/services/faq.html", note: "ユーザー提供情報" },
         "PELIKAN|M400": { value: "14.9 g", url: "https://www.pelikan.com/ae/services/faq.html", note: "Pelikan公式FAQ・Souverän M400標準重量" },
@@ -1880,88 +1857,17 @@ document.addEventListener("DOMContentLoaded", function () {
         "KAWECO|Piston Sport": { value: "22 g", url: "https://preco-corp.co.jp/product/13551/", note: "Kaweco輸入元プリコ掲載重量（ALモデル）" },
         "KAWECO|AC Sport": { value: "22 g", url: "https://preco-corp.co.jp/brand/kaweco/", note: "ユーザー提供情報" },
     };
-    const categoryLabel = document.querySelector(".hero .small-title");
-    let previousFocus = null;
 
-    function openDetail(link) {
-        const card = link.closest(".stationery-card");
-        if (!card) return;
-
-        const name = card.querySelector(".stationery-card-name");
-        const seriesSection = card.closest(".series-section");
-        const maker = seriesSection && seriesSection.querySelector(".series-maker");
-        const series = seriesSection && seriesSection.querySelector(".series-title");
-
-        nameField.textContent = name ? name.textContent.trim() : "商品詳細";
-        const weightKey = (maker ? maker.textContent.trim() : "") + "|" + (name ? name.textContent.trim().replace(/\s+/g, " ") : "");
-        const weightData = verifiedWeights[weightKey];
-        const priceData = verifiedPrices[weightKey];
-        priceField.textContent = priceData ? priceData.value : "未確認";
-        priceSourceNote.hidden = Boolean(priceData);
-        priceSourceLink.hidden = !priceData;
-        if (priceData) {
-            priceSourceLink.href = priceData.url;
-            priceSourceLink.textContent = priceData.note;
-        } else {
-            priceSourceLink.removeAttribute("href");
-        }
-        weightField.textContent = weightData ? weightData.value : "未確認";
-        weightSourceNote.hidden = Boolean(weightData);
-        weightSourceLink.hidden = !weightData;
-        if (weightData) {
-            weightSourceLink.href = weightData.url;
-            weightSourceLink.textContent = weightData.note;
-        } else {
-            weightSourceLink.removeAttribute("href");
-        }
-        makerField.textContent = maker ? maker.textContent.trim() : "メーカー情報";
-        makerValue.textContent = maker ? maker.textContent.trim() : "確認中";
-        seriesField.textContent = series ? series.textContent.trim() : "";
-        seriesValue.textContent = series ? series.textContent.trim() : "確認中";
-        categoryField.textContent = categoryLabel ? categoryLabel.textContent.replace("CATALOG /", "").trim() : "文房具";
-
-        previousFocus = link;
-        panel.hidden = false;
-        backdrop.hidden = false;
-        panel.setAttribute("aria-hidden", "false");
-        document.body.classList.add("product-detail-open");
-        requestAnimationFrame(function () {
-            panel.classList.add("is-open");
-            backdrop.classList.add("is-open");
-            closeButton.focus();
-        });
-    }
-
-    function closeDetail() {
-        panel.classList.remove("is-open");
-        backdrop.classList.remove("is-open");
-        panel.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("product-detail-open");
-        window.setTimeout(function () {
-            panel.hidden = true;
-            backdrop.hidden = true;
-            if (previousFocus) previousFocus.focus();
-        }, 220);
-    }
-
-    document.querySelectorAll(".stationery-card-link").forEach(function (link) {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            openDetail(link);
-        });
-    });
-
-    closeButton.addEventListener("click", closeDetail);
-    backButton.addEventListener("click", closeDetail);
-    backdrop.addEventListener("click", closeDetail);
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && !panel.hidden) closeDetail();
-    });
+    window.SPProductDetailData = {
+        verifiedPrices: verifiedPrices,
+        verifiedWeights: verifiedWeights
+    };
 });
 </script>
 
 <script src="motion.js?v=1"></script>
     <script src="menu.js?v=1"></script>
+    <script src="product-detail.js?v=1"></script>
     <script src="settings.js?v=global-search-2"></script>
 
 <script src="page-transition.js?v=1"></script>
