@@ -1495,127 +1495,7 @@
                    要素取得
                 ==================================== */
 
-                const menuButton =
-                    document.getElementById(
-                        "menuButton"
-                    );
-
-                const menuPanel =
-                    document.getElementById(
-                        "menuPanel"
-                    );
-
-                const menuBackdrop =
-                    document.getElementById(
-                        "menuBackdrop"
-                    );
-
-
-                /* ====================================
-                   ページ表示
-                ==================================== */
-
-                requestAnimationFrame(
-                    function () {
-
-                        document.body.classList.add(
-                            "page-loaded"
-                        );
-
-                    }
-                );
-
-
-                /* ====================================
-                   メニューを閉じる関数
-                ==================================== */
-
-                function closeMenu() {
-
-                    menuButton.classList.remove(
-                        "active"
-                    );
-
-                    menuPanel.classList.remove(
-                        "active"
-                    );
-
-                    menuBackdrop.classList.remove(
-                        "active"
-                    );
-
-                    menuButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                }
-
-
-                /* ====================================
-                   メニューを開く / 閉じる
-                ==================================== */
-
-                menuButton.addEventListener(
-                    "click",
-                    function () {
-
-                        const isOpen =
-                            menuPanel.classList.toggle(
-                                "active"
-                            );
-
-                        menuButton.classList.toggle(
-                            "active",
-                            isOpen
-                        );
-
-                        menuBackdrop.classList.toggle(
-                            "active",
-                            isOpen
-                        );
-
-                        menuButton.setAttribute(
-                            "aria-expanded",
-                            String(isOpen)
-                        );
-
-                    }
-                );
-
-
-                /* ====================================
-                   背景をクリックしたら閉じる
-                ==================================== */
-
-                menuBackdrop.addEventListener(
-                    "click",
-                    function () {
-
-                        closeMenu();
-
-                    }
-                );
-
-
-                /* ====================================
-                   ESCキーで閉じる
-                ==================================== */
-
-                document.addEventListener(
-                    "keydown",
-                    function (event) {
-
-                        if (
-                            event.key === "Escape"
-                        ) {
-
-                            closeMenu();
-
-                        }
-
-                    }
-                );
+                
 
 
                 /* ====================================
@@ -2081,6 +1961,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <script src="motion.js?v=1"></script>
+    <script src="menu.js?v=1"></script>
     <script src="settings.js?v=global-search-2"></script>
 
 <script src="page-transition.js?v=1"></script>
