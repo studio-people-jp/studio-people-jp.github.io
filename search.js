@@ -20,18 +20,32 @@
     { path: root + "mechanical-pencil.html", type: isEnglish ? "CATALOG" : "カタログ", title: isEnglish ? "Mechanical Pencil" : "シャープペンシル" },
     { path: root + "ball-point-pen.html", type: isEnglish ? "CATALOG" : "カタログ", title: isEnglish ? "Ball Point Pen" : "ボールペン" },
     { path: root + "fountain-pen.html", type: isEnglish ? "CATALOG" : "カタログ", title: isEnglish ? "Fountain Pen" : "万年筆" },
-    { path: root + "about.html", type: isEnglish ? "PAGE" : "ページ", title: isEnglish ? "About" : "このサイトについて" },
-    { path: root + "1.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "2.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "3.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "4.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "5.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "6.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "7.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "8.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "9.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "10.html", type: isEnglish ? "ARTICLE" : "記事", title: "" },
-    { path: root + "11.html", type: isEnglish ? "ARTICLE" : "記事", title: "" }
+    { path: root + "about.html", type: isEnglish ? "PAGE" : "ページ", title: isEnglish ? "About" : "このサイトについて" }
+  ];
+
+  async function getSearchPages() {
+    const apiUrl = "https://api.github.com/repos/studio-people-jp/studio-people-jp.github.io/contents?ref=main&per_page=100";
+    try {
+      const response = await fetch(apiUrl, {
+        headers: { "Accept": "application/vnd.github+json" }
+      });
+      if (!response.ok) throw new Error("記事ファイル一覧を取得できませんでした");
+      const files = await response.json();
+      const articlePages = files
+        .filter(file => file.type === "file" && /^\\d+\\.html$/i.test(file.name))
+        .map(file => ({
+          path: root + file.name,
+          type: isEnglish ? "ARTICLE" : "記事",
+          title: "",
+          number: Number(file.name.match(/^(\\d+)\\.html$/i)[1])
+        }))
+        .sort((a, b) => b.number - a.number);
+      return [...pages, ...articlePages];
+    } catch (error) {
+      console.warn("Studio People: 記事の検索対象を自動取得できませんでした。", error);
+      return pages;
+    }
+  }
   ];
 
   // Kana-aware search: unify hiragana/katakana and add a romaji-to-kana variant.
@@ -96,7 +110,7 @@
 
   function buildIndex() {
     if (indexPromise) return indexPromise;
-    indexPromise = Promise.all(pages.map(async page => {
+    indexPromise = getSearchPages().then(searchPages => Promise.all(searchPages.map(async page => {
       try {
         const response = await fetch(page.path, { credentials: "same-origin" });
         if (!response.ok) return [];
@@ -136,7 +150,7 @@
       } catch (_) {
         return [];
       }
-    })).then(groups => groups.flat());
+    }))).then(groups => groups.flat());
     return indexPromise;
   }
 
