@@ -21,7 +21,8 @@
     { path: root + "ball-point-pen.html", type: isEnglish ? "CATALOG" : "カタログ", title: isEnglish ? "Ball Point Pen" : "ボールペン" },
     { path: root + "fountain-pen.html", type: isEnglish ? "CATALOG" : "カタログ", title: isEnglish ? "Fountain Pen" : "万年筆" },
     { path: root + "about.html", type: isEnglish ? "PAGE" : "ページ", title: isEnglish ? "About" : "このサイトについて" },
-    { path: root + "13.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 17 stationery news" : "11月17日の文房具ニュース" }
+    { path: root + "13.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 17 stationery news" : "11月17日の文房具ニュース" },
+    { path: root + "14.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 18 stationery news" : "11月18日の文房具ニュース" }
   ];
 
   async function getSearchPages() {
