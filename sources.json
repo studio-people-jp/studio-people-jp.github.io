@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "description": "Studio People official stationery information sources. Only stationery-related products and announcements are eligible; gadget categories are excluded regardless of publisher.",
+  "last_updated": "2026-11-18",
+  "sources": [
+    {
+      "id": "kobo-setu",
+      "name": "工房楔",
+      "name_en": "Kobo Setu",
+      "type": "independent_workshop",
+      "status": "active",
+      "categories": [
+        "wooden_pencils",
+        "mechanical_pencils",
+        "ballpoint_pens",
+        "fountain_pens",
+        "pen_accessories",
+        "stationery_events",
+        "limited_materials",
+        "workshop_announcements"
+      ],
+      "official_sources": [
+        {
+          "id": "kobo-setu-blog",
+          "url": "https://setu.jp/blog/",
+          "kind": "official_blog",
+          "monitor": true,
+          "purpose": "Primary source for new products, material introductions, limited releases, event sales, lottery sales, and important workshop announcements."
+        },
+        {
+          "id": "kobo-setu-home",
+          "url": "https://setu.jp/",
+          "kind": "official_website",
+          "monitor": true,
+          "purpose": "Official site updates and event listings."
+        },
+        {
+          "id": "kobo-setu-store",
+          "url": "https://koubousetu.thebase.in/",
+          "kind": "official_online_store",
+          "monitor": true,
+          "purpose": "Official shop announcements and product availability; use as a discovery source and verify editorial claims against the workshop's official announcement where possible."
+        }
+      ],
+      "verification_policy": {
+        "publication_evidence": "Use the original official page and confirm its publication date and product details before including an item in an article.",
+        "social_media_only": false,
+        "third_party_only": false,
+        "deduplicate_by": [
+          "canonical_url",
+          "product_or_announcement"
+        ]
+      },
+      "tracking": {
+        "last_checked_at": null,
+        "last_successful_check_at": null,
+        "last_seen_items": []
+      },
+      "notes": "工房楔 is an independent woodworking and stationery workshop. Monitor stationery-related writing instruments and accessories only; exclude unrelated furniture or general woodworking content."
+    }
+  ]
+}
