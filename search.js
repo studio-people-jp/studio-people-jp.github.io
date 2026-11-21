@@ -24,7 +24,8 @@
     { path: root + "13.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 17 stationery news" : "11月17日の文房具ニュース" },
     { path: root + "14.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 18 stationery news" : "11月18日の文房具ニュース" },
     { path: root + "15.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 19 stationery news" : "11月19日の文房具ニュース" },
-    { path: root + "16.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 20 stationery news" : "11月20日の文房具ニュース" },  ];
+    { path: root + "16.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 20 stationery news" : "11月20日の文房具ニュース" },
+    { path: root + "17.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 21 stationery news" : "11月21日の文房具ニュース" },  ];
 
   async function getSearchPages() {
     const apiUrl = "https://api.github.com/repos/studio-people-jp/studio-people-jp.github.io/contents?ref=main&per_page=100";
