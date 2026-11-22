@@ -102,6 +102,15 @@
     letter-spacing: 0.035em;
 }
 
+.home-quicklink-actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 30px;
+}
+
 .home-quicklink-button {
     position: relative;
     z-index: 1;
