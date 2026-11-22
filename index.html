@@ -111,6 +111,9 @@
             <a class="home-quicklink-button" href="article.html">
                 記事一覧を見る <span aria-hidden="true">↗</span>
             </a>
+            <a class="home-quicklink-button" id="latest-article-link" href="17.html">
+                最新記事を読む <span aria-hidden="true">↗</span>
+            </a>
         </section>
         <section class="home-quicklink" aria-labelledby="home-catalog-title">
             <span class="home-quicklink-label">02 / DISCOVER</span>
@@ -186,13 +189,41 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         /* ====================================
-           要素取得
+           最新記事リンクを自動判定
         ==================================== */
-        
-        /* ====================================
-           ページ遷移
-        ==================================== */
+        const latestArticleLink = document.getElementById("latest-article-link");
 
+        if (latestArticleLink) {
+            fetch("https://api.github.com/repos/studio-people-jp/studio-people-jp.github.io/contents/", {
+                cache: "no-store"
+            })
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error("記事一覧を取得できませんでした。");
+                    }
+                    return response.json();
+                })
+                .then(function (files) {
+                    const articleNumbers = files
+                        .filter(function (file) {
+                            return file.type === "file" && /^\\d+\\.html$/.test(file.name);
+                        })
+                        .map(function (file) {
+                            return Number(file.name.replace(".html", ""));
+                        })
+                        .filter(Number.isSafeInteger);
+
+                    if (articleNumbers.length === 0) {
+                        throw new Error("記事ファイルが見つかりませんでした。");
+                    }
+
+                    const latestNumber = Math.max.apply(null, articleNumbers);
+                    latestArticleLink.href = latestNumber + ".html";
+                })
+                .catch(function (error) {
+                    console.error("最新記事リンクの更新に失敗しました:", error);
+                });
+        }
     });
 </script>
 <script src="motion.js?v=5"></script>
