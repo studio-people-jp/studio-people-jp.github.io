@@ -208,7 +208,7 @@
                 .then(function (files) {
                     const articleNumbers = files
                         .filter(function (file) {
-                            return file.type === "file" && /^\\d+\\.html$/.test(file.name);
+                            return file.type === "file" && /^\d+\.html$/.test(file.name);
                         })
                         .map(function (file) {
                             return Number(file.name.replace(".html", ""));
