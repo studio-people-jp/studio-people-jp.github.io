@@ -11,7 +11,7 @@
 
   const STORAGE_KEY = "studioPeople.settings.v1";
   const DEFAULTS = { theme: "standard", motion: true, language: "ja" };
-  const THEMES = ["standard", "midnight", "dark", "sky", "mono-black", "mono-white", "greige", "play-button-minimal", "galaxy", "editorial"];
+  const THEMES = ["standard", "midnight", "dark", "sky", "mono-black", "mono-white", "greige", "play-button-minimal", "galaxy", "editorial", "koji-orange"];
 
   function loadSettings() {
     try {
@@ -103,6 +103,7 @@
           <button type="button" class="sp-theme-option sp-theme-play-button-minimal" data-sp-theme-choice="play-button-minimal" aria-pressed="false"><span class="sp-theme-preview" aria-hidden="true"></span><span><span class="sp-theme-name">Play Button Minimal</span><span class="sp-theme-desc">レッド × ホワイト × グラファイト</span></span></button>
           <button type="button" class="sp-theme-option sp-theme-galaxy" data-sp-theme-choice="galaxy" aria-pressed="false"><span class="sp-theme-preview" aria-hidden="true"></span><span><span class="sp-theme-name">GALAXY Color</span><span class="sp-theme-desc">Deep Space / 青紫の星雲</span></span></button>
           <button type="button" class="sp-theme-option sp-theme-editorial" data-sp-theme-choice="editorial" aria-pressed="false"><span class="sp-theme-preview" aria-hidden="true"></span><span><span class="sp-theme-name">EDITORIAL</span><span class="sp-theme-desc">PRINT JOURNAL / 紙の雑誌</span></span></button>
+          <button type="button" class="sp-theme-option sp-theme-koji-orange" data-sp-theme-choice="koji-orange" aria-pressed="false"><span class="sp-theme-preview" aria-hidden="true"></span><span><span class="sp-theme-name">KOJI ORANGE</span><span class="sp-theme-desc">ホワイト × 柑子色</span></span></button>
         </div>
       </section>
       <section class="sp-settings-section">
@@ -139,7 +140,8 @@
         "greige": "Beige × Charcoal",
         "play-button-minimal": "Red × White × Graphite",
         "galaxy": "Deep Space / Blue-violet nebula",
-        "editorial": "PRINT JOURNAL / Paper magazine"
+        "editorial": "PRINT JOURNAL / Paper magazine",
+        "koji-orange": "White × Koji Orange"
       };
       panel.querySelectorAll("[data-sp-theme-choice]").forEach(function (button) {
         const description = button.querySelector(".sp-theme-desc");
