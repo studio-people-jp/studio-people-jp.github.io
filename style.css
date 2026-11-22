@@ -4823,3 +4823,219 @@ body[data-sp-theme="play-button-minimal"] button:focus-visible {
         min-height: 52px;
     }
 }
+
+
+/* ========================================
+   KOJI ORANGE THEME — White × bright Koji Orange
+   Theme option: 設定 > 外観・テーマカラー
+======================================== */
+body[data-sp-theme="koji-orange"] {
+    color-scheme: light;
+    --sp-accent: #F6A23A;
+    --sp-accent-strong: #B96516;
+    --sp-page: #FFFFFF;
+    --sp-text: #292722;
+    --sp-soft: #FFF1D9;
+    --sp-panel: rgba(255, 253, 248, .96);
+    --sp-line: rgba(213, 137, 48, .24);
+    background: #FFFFFF !important;
+    color: #292722 !important;
+}
+body[data-sp-theme="koji-orange"]::before {
+    background: repeating-linear-gradient(-25deg, rgba(246,162,58,.035) 0, rgba(246,162,58,.035) 2px, transparent 2px, transparent 30px) !important;
+    opacity: .8 !important;
+}
+body[data-sp-theme="koji-orange"]::after {
+    background: radial-gradient(circle, rgba(246,162,58,.20) 0%, rgba(246,162,58,.055) 46%, transparent 74%) !important;
+}
+body[data-sp-theme="koji-orange"] header {
+    background: rgba(255,255,255,.82) !important;
+    border-bottom-color: rgba(213,137,48,.20) !important;
+}
+body[data-sp-theme="koji-orange"] .logo,
+body[data-sp-theme="koji-orange"] h1,
+body[data-sp-theme="koji-orange"] h2,
+body[data-sp-theme="koji-orange"] h3,
+body[data-sp-theme="koji-orange"] h4,
+body[data-sp-theme="koji-orange"] h5,
+body[data-sp-theme="koji-orange"] h6 {
+    color: #292722 !important;
+}
+body[data-sp-theme="koji-orange"] .small-title,
+body[data-sp-theme="koji-orange"] .newsletter-eyebrow,
+body[data-sp-theme="koji-orange"] .home-quicklink-label {
+    color: #C47A27 !important;
+}
+body[data-sp-theme="koji-orange"] .hero::before {
+    background: linear-gradient(135deg, rgba(246,162,58,.18), rgba(255,255,255,0)) !important;
+}
+body[data-sp-theme="koji-orange"] .hero::after {
+    border-color: rgba(213,137,48,.22) !important;
+}
+body[data-sp-theme="koji-orange"] .description,
+body[data-sp-theme="koji-orange"] .newsletter-description,
+body[data-sp-theme="koji-orange"] .newsletter-note,
+body[data-sp-theme="koji-orange"] .home-quicklink-description {
+    color: #756858 !important;
+}
+body[data-sp-theme="koji-orange"] .menu-button,
+body[data-sp-theme="koji-orange"] .sp-settings-button {
+    color: #292722 !important;
+    background: rgba(255,253,248,.96) !important;
+    border-color: rgba(213,137,48,.24) !important;
+    box-shadow: 0 4px 16px rgba(117,82,39,.09) !important;
+}
+body[data-sp-theme="koji-orange"] .menu-button span {
+    background: #B96516 !important;
+}
+body[data-sp-theme="koji-orange"] .menu-panel,
+body[data-sp-theme="koji-orange"] .sp-settings-panel {
+    color: #292722 !important;
+    background: rgba(255,253,248,.97) !important;
+    border-color: rgba(213,137,48,.24) !important;
+    box-shadow: -14px 0 42px rgba(117,82,39,.12) !important;
+}
+body[data-sp-theme="koji-orange"] .menu-panel a {
+    color: #754619 !important;
+}
+body[data-sp-theme="koji-orange"] .menu-panel a:hover,
+body[data-sp-theme="koji-orange"] .menu-panel a:focus-visible {
+    color: #A9540C !important;
+    background: #FFF1D9 !important;
+}
+body[data-sp-theme="koji-orange"] .menu-backdrop,
+body[data-sp-theme="koji-orange"] .sp-settings-backdrop {
+    background: rgba(70,53,34,.18) !important;
+}
+body[data-sp-theme="koji-orange"] .youtube-button,
+body[data-sp-theme="koji-orange"] .newsletter-controls button {
+    color: #FFFFFF !important;
+    background: #F6A23A !important;
+    border-color: #F6A23A !important;
+    box-shadow: 0 8px 24px rgba(193,119,34,.16) !important;
+}
+body[data-sp-theme="koji-orange"] .youtube-button:hover,
+body[data-sp-theme="koji-orange"] .newsletter-controls button:hover {
+    background: #D98220 !important;
+    border-color: #D98220 !important;
+}
+body[data-sp-theme="koji-orange"] .newsletter-controls input {
+    color: #292722 !important;
+    background: #FFFFFF !important;
+    border-color: rgba(213,137,48,.35) !important;
+}
+body[data-sp-theme="koji-orange"] .newsletter-controls input::placeholder {
+    color: #A99A88 !important;
+}
+body[data-sp-theme="koji-orange"] .home-quicklinks {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF8EC 100%) !important;
+    border-color: rgba(213,137,48,.24) !important;
+    box-shadow: 0 18px 48px rgba(117,82,39,.09) !important;
+}
+body[data-sp-theme="koji-orange"] .home-quicklink {
+    color: #292722 !important;
+    border-bottom-color: rgba(213,137,48,.20) !important;
+}
+body[data-sp-theme="koji-orange"] .home-quicklink-title,
+body[data-sp-theme="koji-orange"] .home-quicklink-heading {
+    color: #292722 !important;
+}
+body[data-sp-theme="koji-orange"] .home-quicklink-button {
+    color: #C46D16 !important;
+    border-bottom-color: rgba(196,109,22,.48) !important;
+}
+body[data-sp-theme="koji-orange"] .home-quicklink-button:hover,
+body[data-sp-theme="koji-orange"] .home-quicklink-button:focus-visible {
+    color: #8F480B !important;
+    border-bottom-color: #8F480B !important;
+}
+body[data-sp-theme="koji-orange"] .article-card,
+body[data-sp-theme="koji-orange"] .stationery-card,
+body[data-sp-theme="koji-orange"] .catalog-tabs-wrap,
+body[data-sp-theme="koji-orange"] .catalog-tab,
+body[data-sp-theme="koji-orange"] .catalog-category-tab,
+body[data-sp-theme="koji-orange"] .series-scroll-button,
+body[data-sp-theme="koji-orange"] .product-detail-panel,
+body[data-sp-theme="koji-orange"] .product-detail-close {
+    color: #292722 !important;
+    background-color: rgba(255,253,248,.94) !important;
+    border-color: rgba(213,137,48,.24) !important;
+    box-shadow: 0 8px 26px rgba(117,82,39,.06) !important;
+}
+body[data-sp-theme="koji-orange"] .article-card::before,
+body[data-sp-theme="koji-orange"] .stationery-card::before {
+    background: linear-gradient(to bottom, #F6A23A, rgba(246,162,58,.12)) !important;
+}
+body[data-sp-theme="koji-orange"] .article-card h3,
+body[data-sp-theme="koji-orange"] .article-card p,
+body[data-sp-theme="koji-orange"] .stationery-card h3,
+body[data-sp-theme="koji-orange"] .catalog-description {
+    color: #51483E !important;
+}
+body[data-sp-theme="koji-orange"] .catalog-tab,
+body[data-sp-theme="koji-orange"] .catalog-category-tab {
+    color: #51483E !important;
+    background: #FFFFFF !important;
+}
+body[data-sp-theme="koji-orange"] .catalog-tab.active,
+body[data-sp-theme="koji-orange"] .catalog-category-tab.active,
+body[data-sp-theme="koji-orange"] .catalog-tab[aria-selected="true"],
+body[data-sp-theme="koji-orange"] .catalog-category-tab[aria-selected="true"] {
+    color: #754619 !important;
+    background: #FFF1D9 !important;
+    border-color: rgba(213,137,48,.42) !important;
+}
+body[data-sp-theme="koji-orange"] .article-list a,
+body[data-sp-theme="koji-orange"] .catalog-link,
+body[data-sp-theme="koji-orange"] .stationery-card-link,
+body[data-sp-theme="koji-orange"] .article-navigation a,
+body[data-sp-theme="koji-orange"] .catalog-list-back,
+body[data-sp-theme="koji-orange"] .product-detail-back {
+    color: #B96516 !important;
+}
+body[data-sp-theme="koji-orange"] .sp-settings-title,
+body[data-sp-theme="koji-orange"] .sp-settings-section-title {
+    color: #292722 !important;
+}
+body[data-sp-theme="koji-orange"] .sp-settings-subtitle,
+body[data-sp-theme="koji-orange"] .sp-settings-section-caption {
+    color: #756858 !important;
+}
+body[data-sp-theme="koji-orange"] .sp-settings-close,
+body[data-sp-theme="koji-orange"] .sp-settings-reset,
+body[data-sp-theme="koji-orange"] .sp-theme-option {
+    color: #51483E !important;
+    border-color: rgba(213,137,48,.24) !important;
+}
+body[data-sp-theme="koji-orange"] .sp-settings-close:hover,
+body[data-sp-theme="koji-orange"] .sp-settings-reset:hover,
+body[data-sp-theme="koji-orange"] .sp-theme-option:hover {
+    color: #A9540C !important;
+    background: #FFF1D9 !important;
+}
+body[data-sp-theme="koji-orange"] .sp-theme-option[aria-pressed="true"] {
+    color: #754619 !important;
+    background: #FFF1D9 !important;
+    border-color: #F6A23A !important;
+    box-shadow: inset 0 0 0 1px #F6A23A !important;
+}
+body[data-sp-theme="koji-orange"] .scroll-progress {
+    background: #F6A23A !important;
+}
+body[data-sp-theme="koji-orange"] footer {
+    color: #8D7D6B !important;
+    border-top-color: rgba(213,137,48,.20) !important;
+}
+body[data-sp-theme="koji-orange"] .footer-company-name {
+    color: #B96516 !important;
+}
+body[data-sp-theme="koji-orange"] a:focus-visible,
+body[data-sp-theme="koji-orange"] button:focus-visible {
+    outline: 2px solid #D98220 !important;
+    outline-offset: 3px;
+}
+.sp-theme-koji-orange .sp-theme-preview {
+    background: #FFFFFF;
+    --sp-preview-accent: #F6A23A;
+    --sp-preview-surface: #FFF1D9;
+}
