@@ -4846,7 +4846,8 @@ body[data-sp-theme="koji-orange"]::before {
     opacity: .8 !important;
 }
 body[data-sp-theme="koji-orange"]::after {
-    background: radial-gradient(circle, rgba(246,162,58,.20) 0%, rgba(246,162,58,.055) 46%, transparent 74%) !important;
+    content: none !important;
+    display: none !important;
 }
 body[data-sp-theme="koji-orange"] header {
     background: rgba(255,255,255,.82) !important;
