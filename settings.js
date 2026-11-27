@@ -11,7 +11,7 @@
 
   const STORAGE_KEY = "studioPeople.settings.v1";
   const DEFAULTS = { theme: "standard", motion: true, language: "ja" };
-  const THEMES = ["standard", "midnight", "dark", "sky", "mono-black", "mono-white", "greige", "play-button-minimal", "galaxy", "editorial", "koji-orange"];
+  const THEMES = ["standard", "midnight", "dark", "sky", "mono-black", "mono-white", "greige", "play-button-minimal", "galaxy", "editorial", "koji-orange", "arctic-glass";
 
   function loadSettings() {
     try {
@@ -104,6 +104,7 @@
           <button type="button" class="sp-theme-option sp-theme-galaxy" data-sp-theme-choice="galaxy" aria-pressed="false"><span class="sp-theme-preview" aria-hidden="true"></span><span><span class="sp-theme-name">GALAXY Color</span><span class="sp-theme-desc">Deep Space / 青紫の星雲</span></span></button>
           <button type="button" class="sp-theme-option sp-theme-editorial" data-sp-theme-choice="editorial" aria-pressed="false"><span class="sp-theme-preview" aria-hidden="true"></span><span><span class="sp-theme-name">EDITORIAL</span><span class="sp-theme-desc">PRINT JOURNAL / 紙の雑誌</span></span></button>
           <button type="button" class="sp-theme-option sp-theme-koji-orange" data-sp-theme-choice="koji-orange" aria-pressed="false"><span class="sp-theme-preview" aria-hidden="true"></span><span><span class="sp-theme-name">KOJI ORANGE</span><span class="sp-theme-desc">ホワイト × 柑子色</span></span></button>
+          <button type="button" class="sp-theme-option sp-theme-arctic-glass" data-sp-theme-choice="arctic-glass" aria-pressed="false"><span class="sp-theme-preview" aria-hidden="true"></span><span><span class="sp-theme-name">ARCTIC GLASS</span><span class="sp-theme-desc">アイスブルー × クリアガラス</span></span></button>
         </div>
       </section>
       <section class="sp-settings-section">
@@ -141,7 +142,8 @@
         "play-button-minimal": "Red × White × Graphite",
         "galaxy": "Deep Space / Blue-violet nebula",
         "editorial": "PRINT JOURNAL / Paper magazine",
-        "koji-orange": "White × Koji Orange"
+        "koji-orange": "White × Koji Orange",
+        "arctic-glass": "Ice blue × Clear glass"
       };
       panel.querySelectorAll("[data-sp-theme-choice]").forEach(function (button) {
         const description = button.querySelector(".sp-theme-desc");
@@ -183,6 +185,14 @@
         galaxyStylesheet.rel = "stylesheet";
         galaxyStylesheet.href = new URL("galaxy.css?v=1", SETTINGS_SCRIPT_URL).href;
         document.head.appendChild(galaxyStylesheet);
+      }
+      let arcticGlassStylesheet = document.getElementById("spArcticGlassStylesheet");
+      if (!arcticGlassStylesheet) {
+        arcticGlassStylesheet = document.createElement("link");
+        arcticGlassStylesheet.id = "spArcticGlassStylesheet";
+        arcticGlassStylesheet.rel = "stylesheet";
+        arcticGlassStylesheet.href = new URL("arctic-glass.css?v=1", SETTINGS_SCRIPT_URL).href;
+        document.head.appendChild(arcticGlassStylesheet);
       }
       document.body.classList.toggle("sp-reduce-motion", !settings.motion);
       themeButtons.forEach(function (button) {
