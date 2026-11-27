@@ -11,7 +11,7 @@
 
   const STORAGE_KEY = "studioPeople.settings.v1";
   const DEFAULTS = { theme: "standard", motion: true, language: "ja" };
-  const THEMES = ["standard", "midnight", "dark", "sky", "mono-black", "mono-white", "greige", "play-button-minimal", "galaxy", "editorial", "koji-orange", "arctic-glass";
+  const THEMES = ["standard", "midnight", "dark", "sky", "mono-black", "mono-white", "greige", "play-button-minimal", "galaxy", "editorial", "koji-orange", "arctic-glass"];
 
   function loadSettings() {
     try {
