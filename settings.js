@@ -191,7 +191,7 @@
         arcticGlassStylesheet = document.createElement("link");
         arcticGlassStylesheet.id = "spArcticGlassStylesheet";
         arcticGlassStylesheet.rel = "stylesheet";
-        arcticGlassStylesheet.href = new URL("arctic-glass.css?v=2", SETTINGS_SCRIPT_URL).href;
+        arcticGlassStylesheet.href = new URL("arctic-glass.css?v=3", SETTINGS_SCRIPT_URL).href;
         document.head.appendChild(arcticGlassStylesheet);
       }
       document.body.classList.toggle("sp-reduce-motion", !settings.motion);
