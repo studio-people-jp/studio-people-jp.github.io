@@ -1,0 +1,222 @@
+/* ========================================
+   ARCTIC GLASS — Ice blue × clear glass
+   Studio People theme
+======================================== */
+body[data-sp-theme="arctic-glass"] {
+  color-scheme: light;
+  --sp-accent: #8FC8DF;
+  --sp-accent-strong: #426F8A;
+  --sp-page: #F7FCFE;
+  --sp-text: #243B4A;
+  --sp-soft: #EAF6FA;
+  --sp-panel: rgba(255,255,255,.82);
+  --sp-line: rgba(112,171,194,.28);
+  background: #F7FCFE !important;
+  color: #243B4A !important;
+}
+body[data-sp-theme="arctic-glass"]::before {
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(190,231,244,.42), transparent 42%),
+    radial-gradient(ellipse at 88% 35%, rgba(210,239,247,.34), transparent 46%),
+    linear-gradient(145deg, rgba(255,255,255,.78), rgba(235,247,251,.52)) !important;
+  opacity: 1 !important;
+}
+body[data-sp-theme="arctic-glass"]::after {
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,.58) 48%, transparent 72%) !important;
+  opacity: .42 !important;
+}
+body[data-sp-theme="arctic-glass"] header {
+  background: rgba(255,255,255,.78) !important;
+  border-bottom-color: rgba(126,184,205,.28) !important;
+  backdrop-filter: blur(18px) saturate(145%);
+}
+body[data-sp-theme="arctic-glass"] .logo,
+body[data-sp-theme="arctic-glass"] h1,
+body[data-sp-theme="arctic-glass"] h2,
+body[data-sp-theme="arctic-glass"] h3,
+body[data-sp-theme="arctic-glass"] h4,
+body[data-sp-theme="arctic-glass"] h5,
+body[data-sp-theme="arctic-glass"] h6 {
+  color: #243B4A !important;
+}
+body[data-sp-theme="arctic-glass"] .small-title,
+body[data-sp-theme="arctic-glass"] .newsletter-eyebrow,
+body[data-sp-theme="arctic-glass"] .home-quicklink-label {
+  color: #5D9DB8 !important;
+}
+body[data-sp-theme="arctic-glass"] .hero::before {
+  background: linear-gradient(135deg, rgba(170,220,237,.34), rgba(255,255,255,0)) !important;
+}
+body[data-sp-theme="arctic-glass"] .hero::after {
+  border-color: rgba(126,184,205,.34) !important;
+}
+body[data-sp-theme="arctic-glass"] .description,
+body[data-sp-theme="arctic-glass"] .newsletter-description,
+body[data-sp-theme="arctic-glass"] .newsletter-note,
+body[data-sp-theme="arctic-glass"] .home-quicklink-description {
+  color: #66808D !important;
+}
+body[data-sp-theme="arctic-glass"] .menu-button,
+body[data-sp-theme="arctic-glass"] .sp-settings-button {
+  color: #35596C !important;
+  background: rgba(255,255,255,.84) !important;
+  border-color: rgba(126,184,205,.34) !important;
+  box-shadow: 0 5px 18px rgba(77,133,155,.10) !important;
+  backdrop-filter: blur(14px);
+}
+body[data-sp-theme="arctic-glass"] .menu-button span {
+  background: #5D9DB8 !important;
+}
+body[data-sp-theme="arctic-glass"] .menu-panel,
+body[data-sp-theme="arctic-glass"] .sp-settings-panel {
+  color: #243B4A !important;
+  background: rgba(250,254,255,.91) !important;
+  border-color: rgba(126,184,205,.32) !important;
+  box-shadow: -14px 0 42px rgba(77,133,155,.13) !important;
+  backdrop-filter: blur(22px) saturate(150%);
+}
+body[data-sp-theme="arctic-glass"] .menu-panel a {
+  color: #426F8A !important;
+}
+body[data-sp-theme="arctic-glass"] .menu-panel a:hover,
+body[data-sp-theme="arctic-glass"] .menu-panel a:focus-visible {
+  color: #315E78 !important;
+  background: #EAF6FA !important;
+}
+body[data-sp-theme="arctic-glass"] .menu-backdrop,
+body[data-sp-theme="arctic-glass"] .sp-settings-backdrop {
+  background: rgba(44,75,91,.16) !important;
+}
+body[data-sp-theme="arctic-glass"] .youtube-button,
+body[data-sp-theme="arctic-glass"] .newsletter-controls button {
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #8FC8DF, #659FBA) !important;
+  border-color: #8FC8DF !important;
+  box-shadow: 0 8px 24px rgba(91,157,185,.20) !important;
+}
+body[data-sp-theme="arctic-glass"] .youtube-button:hover,
+body[data-sp-theme="arctic-glass"] .newsletter-controls button:hover {
+  background: #5D9DB8 !important;
+  border-color: #5D9DB8 !important;
+}
+body[data-sp-theme="arctic-glass"] .newsletter-controls input {
+  color: #243B4A !important;
+  background: rgba(255,255,255,.9) !important;
+  border-color: rgba(126,184,205,.42) !important;
+}
+body[data-sp-theme="arctic-glass"] .newsletter-controls input::placeholder {
+  color: #9AB3BE !important;
+}
+body[data-sp-theme="arctic-glass"] .home-quicklinks {
+  background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(234,246,250,.88)) !important;
+  border-color: rgba(126,184,205,.32) !important;
+  box-shadow: 0 18px 48px rgba(77,133,155,.10) !important;
+  backdrop-filter: blur(16px);
+}
+body[data-sp-theme="arctic-glass"] .home-quicklink {
+  color: #243B4A !important;
+  border-bottom-color: rgba(126,184,205,.26) !important;
+}
+body[data-sp-theme="arctic-glass"] .home-quicklink-title,
+body[data-sp-theme="arctic-glass"] .home-quicklink-heading {
+  color: #243B4A !important;
+}
+body[data-sp-theme="arctic-glass"] .home-quicklink-button {
+  color: #426F8A !important;
+  border-bottom-color: rgba(93,157,184,.48) !important;
+}
+body[data-sp-theme="arctic-glass"] .home-quicklink-button:hover,
+body[data-sp-theme="arctic-glass"] .home-quicklink-button:focus-visible {
+  color: #315E78 !important;
+  border-bottom-color: #315E78 !important;
+}
+body[data-sp-theme="arctic-glass"] .article-card,
+body[data-sp-theme="arctic-glass"] .stationery-card,
+body[data-sp-theme="arctic-glass"] .catalog-tabs-wrap,
+body[data-sp-theme="arctic-glass"] .catalog-tab,
+body[data-sp-theme="arctic-glass"] .catalog-category-tab,
+body[data-sp-theme="arctic-glass"] .series-scroll-button,
+body[data-sp-theme="arctic-glass"] .product-detail-panel,
+body[data-sp-theme="arctic-glass"] .product-detail-close {
+  color: #243B4A !important;
+  background-color: rgba(255,255,255,.88) !important;
+  border-color: rgba(126,184,205,.30) !important;
+  box-shadow: 0 8px 26px rgba(77,133,155,.07) !important;
+}
+body[data-sp-theme="arctic-glass"] .article-card::before,
+body[data-sp-theme="arctic-glass"] .stationery-card::before {
+  background: linear-gradient(to bottom, #8FC8DF, rgba(143,200,223,.12)) !important;
+}
+body[data-sp-theme="arctic-glass"] .article-card h3,
+body[data-sp-theme="arctic-glass"] .article-card p,
+body[data-sp-theme="arctic-glass"] .stationery-card h3,
+body[data-sp-theme="arctic-glass"] .catalog-description {
+  color: #58717E !important;
+}
+body[data-sp-theme="arctic-glass"] .catalog-tab,
+body[data-sp-theme="arctic-glass"] .catalog-category-tab {
+  color: #426F8A !important;
+  background: rgba(255,255,255,.9) !important;
+}
+body[data-sp-theme="arctic-glass"] .catalog-tab.active,
+body[data-sp-theme="arctic-glass"] .catalog-category-tab.active,
+body[data-sp-theme="arctic-glass"] .catalog-tab[aria-selected="true"],
+body[data-sp-theme="arctic-glass"] .catalog-category-tab[aria-selected="true"] {
+  color: #315E78 !important;
+  background: #E5F3F8 !important;
+  border-color: rgba(93,157,184,.52) !important;
+}
+body[data-sp-theme="arctic-glass"] .article-list a,
+body[data-sp-theme="arctic-glass"] .catalog-link,
+body[data-sp-theme="arctic-glass"] .stationery-card-link,
+body[data-sp-theme="arctic-glass"] .article-navigation a,
+body[data-sp-theme="arctic-glass"] .catalog-list-back,
+body[data-sp-theme="arctic-glass"] .product-detail-back {
+  color: #426F8A !important;
+}
+body[data-sp-theme="arctic-glass"] .sp-settings-title,
+body[data-sp-theme="arctic-glass"] .sp-settings-section-title {
+  color: #243B4A !important;
+}
+body[data-sp-theme="arctic-glass"] .sp-settings-subtitle,
+body[data-sp-theme="arctic-glass"] .sp-settings-section-caption {
+  color: #66808D !important;
+}
+body[data-sp-theme="arctic-glass"] .sp-settings-close,
+body[data-sp-theme="arctic-glass"] .sp-settings-reset,
+body[data-sp-theme="arctic-glass"] .sp-theme-option {
+  color: #426F8A !important;
+  border-color: rgba(126,184,205,.32) !important;
+}
+body[data-sp-theme="arctic-glass"] .sp-settings-close:hover,
+body[data-sp-theme="arctic-glass"] .sp-settings-reset:hover,
+body[data-sp-theme="arctic-glass"] .sp-theme-option:hover {
+  color: #315E78 !important;
+  background: #EAF6FA !important;
+}
+body[data-sp-theme="arctic-glass"] .sp-theme-option[aria-pressed="true"] {
+  color: #315E78 !important;
+  background: #EAF6FA !important;
+  border-color: #8FC8DF !important;
+  box-shadow: inset 0 0 0 1px #8FC8DF !important;
+}
+body[data-sp-theme="arctic-glass"] .scroll-progress {
+  background: #8FC8DF !important;
+}
+body[data-sp-theme="arctic-glass"] footer {
+  color: #78919C !important;
+  border-top-color: rgba(126,184,205,.28) !important;
+}
+body[data-sp-theme="arctic-glass"] .footer-company-name {
+  color: #426F8A !important;
+}
+body[data-sp-theme="arctic-glass"] a:focus-visible,
+body[data-sp-theme="arctic-glass"] button:focus-visible {
+  outline: 2px solid #5D9DB8 !important;
+  outline-offset: 3px;
+}
+.sp-theme-arctic-glass .sp-theme-preview {
+  background: linear-gradient(135deg, #FFFFFF 0%, #DFF2F8 48%, #8FC8DF 100%);
+  --sp-preview-accent: #8FC8DF;
+  --sp-preview-surface: #EAF6FA;
+}
