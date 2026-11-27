@@ -351,3 +351,17 @@ body[data-sp-theme="arctic-glass"] .sp-settings-panel {
     transition: none !important;
   }
 }
+
+/* ARCTIC GLASS — lift the three header controls slightly */
+body[data-sp-theme="arctic-glass"] .sp-search-button,
+body[data-sp-theme="arctic-glass"] .sp-settings-button,
+body[data-sp-theme="arctic-glass"] .menu-button {
+  top: 14px !important;
+}
+@media (max-width: 600px) {
+  body[data-sp-theme="arctic-glass"] .sp-search-button,
+  body[data-sp-theme="arctic-glass"] .sp-settings-button,
+  body[data-sp-theme="arctic-glass"] .menu-button {
+    top: 10px !important;
+  }
+}
