@@ -29,6 +29,7 @@
     { path: root + "18.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 24 stationery news" : "11月24日の文房具ニュース" },
     { path: root + "19.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 25 stationery news" : "11月25日の文房具ニュース" },
     { path: root + "20.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 26 stationery news" : "11月26日の文房具ニュース" },
+    { path: root + "21.html", type: isEnglish ? "ARTICLE" : "記事", title: isEnglish ? "November 27 stationery news" : "11月27日の文房具ニュース" },
   ];
 
   async function getSearchPages() {
