@@ -220,3 +220,134 @@ body[data-sp-theme="arctic-glass"] button:focus-visible {
   --sp-preview-accent: #8FC8DF;
   --sp-preview-surface: #EAF6FA;
 }
+
+
+/* ========================================
+   ARCTIC GLASS — Floating Glass UI
+   独立したガラスレイヤーと浮遊感
+======================================== */
+
+/* ヘッダーを全幅バーから独立したガラスシェルへ */
+body[data-sp-theme="arctic-glass"] header {
+  top: 14px !important;
+  left: 50% !important;
+  width: min(1100px, calc(100% - 32px)) !important;
+  height: 68px !important;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255,255,255,.82) !important;
+  border-bottom-color: rgba(126,184,205,.38) !important;
+  border-radius: 22px !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.82), rgba(232,247,252,.58)) !important;
+  box-shadow:
+    0 12px 34px rgba(67,125,148,.12),
+    0 2px 8px rgba(255,255,255,.72) inset,
+    0 -1px 0 rgba(126,184,205,.12) inset !important;
+  backdrop-filter: blur(26px) saturate(165%) !important;
+  -webkit-backdrop-filter: blur(26px) saturate(165%) !important;
+}
+
+body[data-sp-theme="arctic-glass"] .header-inner {
+  height: 68px !important;
+  width: calc(100% - 38px) !important;
+}
+
+body[data-sp-theme="arctic-glass"] .logo {
+  text-shadow: 0 1px 12px rgba(255,255,255,.72);
+}
+
+/* 操作ボタンも独立した小さなガラスパーツに */
+body[data-sp-theme="arctic-glass"] .menu-button,
+body[data-sp-theme="arctic-glass"] .sp-settings-button {
+  border: 1px solid rgba(255,255,255,.9) !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(222,243,250,.68)) !important;
+  box-shadow:
+    0 8px 24px rgba(67,125,148,.14),
+    0 1px 3px rgba(255,255,255,.9) inset !important;
+  backdrop-filter: blur(22px) saturate(170%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(170%) !important;
+  transition: transform .28s ease, box-shadow .28s ease, background .28s ease !important;
+}
+
+body[data-sp-theme="arctic-glass"] .menu-button:hover,
+body[data-sp-theme="arctic-glass"] .sp-settings-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 13px 30px rgba(67,125,148,.19),
+    0 1px 3px rgba(255,255,255,.95) inset !important;
+}
+
+/* コンテンツカードを一枚板ではなく、重なったガラス面に */
+body[data-sp-theme="arctic-glass"] .article-card,
+body[data-sp-theme="arctic-glass"] .stationery-card,
+body[data-sp-theme="arctic-glass"] .product-detail-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.9) !important;
+  border-radius: 22px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.78), rgba(230,246,251,.58)) !important;
+  box-shadow:
+    0 16px 38px rgba(67,125,148,.10),
+    0 1px 0 rgba(255,255,255,.95) inset,
+    0 -1px 0 rgba(126,184,205,.10) inset !important;
+  backdrop-filter: blur(20px) saturate(155%);
+  -webkit-backdrop-filter: blur(20px) saturate(155%);
+}
+
+body[data-sp-theme="arctic-glass"] .article-card::after,
+body[data-sp-theme="arctic-glass"] .stationery-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgba(255,255,255,.42), transparent 38%, transparent 72%, rgba(255,255,255,.16));
+  opacity: .8;
+}
+
+body[data-sp-theme="arctic-glass"] .home-quicklinks {
+  border: 1px solid rgba(255,255,255,.92) !important;
+  border-radius: 26px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.74), rgba(225,244,250,.52)) !important;
+  box-shadow:
+    0 22px 52px rgba(67,125,148,.12),
+    0 1px 0 rgba(255,255,255,.95) inset !important;
+  backdrop-filter: blur(24px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(160%) !important;
+}
+
+body[data-sp-theme="arctic-glass"] .home-quicklink {
+  background: transparent !important;
+  border-bottom-color: rgba(126,184,205,.22) !important;
+}
+
+body[data-sp-theme="arctic-glass"] .menu-panel,
+body[data-sp-theme="arctic-glass"] .sp-settings-panel {
+  border: 1px solid rgba(255,255,255,.9) !important;
+  box-shadow:
+    0 24px 64px rgba(53,103,126,.18),
+    0 1px 0 rgba(255,255,255,.95) inset !important;
+}
+
+@media (max-width: 600px) {
+  body[data-sp-theme="arctic-glass"] header {
+    top: 9px !important;
+    width: calc(100% - 20px) !important;
+    height: 62px !important;
+    border-radius: 19px !important;
+  }
+  body[data-sp-theme="arctic-glass"] .header-inner {
+    height: 62px !important;
+    width: calc(100% - 28px) !important;
+  }
+  body[data-sp-theme="arctic-glass"] .article-card,
+  body[data-sp-theme="arctic-glass"] .stationery-card {
+    border-radius: 18px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-sp-theme="arctic-glass"] .menu-button,
+  body[data-sp-theme="arctic-glass"] .sp-settings-button {
+    transition: none !important;
+  }
+}
